@@ -11,49 +11,37 @@ import { Link } from '@inertiajs/vue3';
 
 const showingNavigationDropdown = ref(false);
 
-const showSideMenu = ref(true);
-const toggleMenu = () => {
-    showSideMenu.value = !showSideMenu.value;
-};
 </script>
 
 <template>
-    <div class="flex flex-row">
-
-        <div class="bg-slate-500 p-4 basis-1/3 flex flex-col" v-if="showSideMenu">
-            <div bg-slate-100 p-4>
-                <a href="/">
-                    <div class="bg-slate-50 p-2 flex flex-row">
-                        <ApplicationLogo class="w-10 h-10 fill-current text-dark" />
-
-                    </div>
-                </a>
-            </div>
+    <div class="flex flex-col">
 
 
-        </div>
         <div class="min-h-screen bg-gray-100 flex flex-col">
             <nav class="bg-white border-b border-gray-100">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-full px-10 mx-auto sm:px-3 lg:px-10">
                     <div class="flex justify-between h-16">
                         <div class="flex">
-                            <!-- Logo -->
-                            <button class="shrink-0 flex items-center " @click="toggleMenu">
-
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor"
-                                    class="size-8 p-1 hover:bg-gray-400 rounded-full">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                                </svg>
-
-                            </button>
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Painel do Usuário
+                                </NavLink>
+
+                                <NavLink :href="route('services.create')" :active="route().current('services.create')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    Vender Serviço
+                                </NavLink>
+
+
+                                <NavLink :href="route('services.index')" :active="route().current('services.index')">
+                                    Meus Serviços
                                 </NavLink>
                             </div>
                         </div>
@@ -115,6 +103,17 @@ const toggleMenu = () => {
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Painel do Usuário
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('services.create')" :active="route().current('services.create')">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                            Vender Serviço
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('services.index')" :active="route().current('services.index')">
+                            Meus Serviços
                         </ResponsiveNavLink>
                     </div>
 
