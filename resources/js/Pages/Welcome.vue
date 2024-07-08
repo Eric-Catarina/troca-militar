@@ -70,7 +70,13 @@ function handleImageError() {
                 </header>
 
                 <main class="mt-6">
+                    <div>
 
+                        <p class="mt-4 text-3xl text-white dark:text-white/80">
+                            Bem-vindo ao nosso site de troca de serviços militares, a plataforma ideal para militares que desejam comprar ou vender plantões e serviços na guarda. Facilite a gestão do seu tempo e encontre oportunidades para ajustar sua rotina conforme suas necessidades. Navegue com facilidade, conecte-se com outros profissionais e otimize sua vida militar com mais flexibilidade e praticidade. Transforme a forma como você gerencia seus compromissos de serviço, garantindo mais liberdade e conveniência no seu dia a dia.
+                        </p>
+
+                        </div>
                 </main>
 
                 <footer class="py-16 text-center text-sm text-black dark:text-white/70">
