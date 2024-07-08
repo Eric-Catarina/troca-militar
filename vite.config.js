@@ -18,7 +18,10 @@ export default defineConfig({
         }),
     ],
     build: {
-        target: "esnext",
+        outDir: 'public/build',  // Adicione esta linha para garantir que o output seja no diretório correto
+        rollupOptions: {
+            input: 'resources/js/app.js',
+        },
     },
     esbuild: {
         target: "es2022",
