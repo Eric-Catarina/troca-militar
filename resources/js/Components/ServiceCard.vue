@@ -17,11 +17,11 @@ const props = defineProps({
     <button class="">
         <div class="basis-2/3 bg-slate-800 p-4 rounded-t-md">
             <p class="text-white text-xl font-semibold">{{ service.title }}</p>
-            <p class="text-gray-300 text-sm font-semibold mt-2 truncate">Irei tirar o seu serviço o dia que você quiser onde rei tirar o seu serviço o dia que você qurei tirar o seu serviço o dia que você qurei tirar o seu serviço o dia que você quvo</p>
+            <p class="text-gray-300 text-sm font-semibold mt-2 truncate">{{ service.whatsapp_number }}</p>
 
         </div>
         <div class="basis-1/3 p-4 rounded-b-md flex  text-xl font-extrabold  justify-center  items-center">
-            <primary-button>R$ 150,00</primary-button>
+            <primary-button>R$ {{ service.price }},00</primary-button>
 
             </div>
 
