@@ -36,7 +36,7 @@ function handleImageError() {
             <div class="min-h-screen w-full max-w-2xl px-6 lg:max-w-7xl flex-col flex justify-between">
                 <header class="align-top grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
                     <div class="flex lg:justify-center lg:col-start-2">
-                        <p class="font-bold text-8xl text-nowrap text-accent">
+                        <p class="font-bold text-7xl text-accent">
                             Troca Militar
 
                         </p>
