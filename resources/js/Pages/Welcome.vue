@@ -43,18 +43,18 @@ function handleImageError() {
                     </div>
                     <nav v-if="canLogin" class="-mx-3 flex flex-1 justify-end">
                         <Link v-if="$page.props.auth.user" :href="route('dashboard')"
-                            class="rounded-md text-3xl px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                            class="rounded-md text-3xl px-3 py-2 text-text ring-1 ring-transparent transition hover:text-text/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                         Dashboard
                         </Link>
 
                         <template v-else>
                             <Link :href="route('login')"
-                                class="rounded-md text-3xl px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                class="rounded-md text-3xl px-3 py-2 text-text ring-1 ring-transparent transition hover:text-text/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                             Entrar
                             </Link>
 
                             <Link v-if="canRegister" :href="route('register')"
-                                class="rounded-md text-3xl px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                class="rounded-md text-3xl px-3 py-2 text-text ring-1 ring-transparent transition hover:text-text/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                             Cadastrar
                             </Link>
                         </template>
@@ -81,7 +81,7 @@ function handleImageError() {
                     </div>
                 </main>
 
-                <footer class="py-16 text-center text-sm text-black dark:text-white/70">
+                <footer class="py-16 text-center text-sm text-text dark:text-white/70">
                     Versão v{{ laravelVersion }} (PHP v{{ phpVersion }})
                 </footer>
             </div>

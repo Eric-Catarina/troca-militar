@@ -59,37 +59,37 @@ const submit = () => {
                     </header>
                     <form @submit.prevent="submit">
                         <div>
-                            <InputLabel for="title" value="Title" />
+                            <InputLabel for="title" value="Título" />
                             <TextInput id="title" type="text" class="mt-1 block w-full" v-model="form.title" required
                                 autofocus />
                             <InputError class="mt-2" :message="form.errors.title" />
                         </div>
                         <div class="mt-4">
-                            <InputLabel for="category" value="Category" />
+                            <InputLabel for="category" value="Categoria" />
                             <TextInput id="category" type="text" class="mt-1 block w-full" v-model="form.category"
                                 required />
                             <InputError class="mt-2" :message="form.errors.category" />
                         </div>
                         <div class="mt-4">
-                            <InputLabel for="description" value="Description" />
+                            <InputLabel for="description" value="Descrição" />
                             <TextInput id="description" type="text" class="mt-1 block w-full" v-model="form.description"
                                 required />
                             <InputError class="mt-2" :message="form.errors.description" />
                         </div>
                         <div class="mt-4">
-                            <InputLabel for="whatsapp_number" value="WhatsApp Number" />
+                            <InputLabel for="whatsapp_number" value="WhatsApp" />
                             <TextInput id="whatsapp_number" type="text" class="mt-1 block w-full"
                                 v-model="form.whatsapp_number" required />
                             <InputError class="mt-2" :message="form.errors.whatsapp_number" />
                         </div>
                         <div class="mt-4">
-                            <InputLabel for="price" value="Price" />
+                            <InputLabel for="price" value="Preço (150)" />
                             <TextInput id="price" type="text" class="mt-1 block w-full" v-model="form.price" required />
                             <InputError class="mt-2" :message="form.errors.price" />
                         </div>
                         <div class="flex items-center justify-end mt-4">
-                            <PrimaryButton  class="ms-4" :class="{ 'opacity-25': form.processing }"
-                                :disabled="form.processing"> Submit
+                            <PrimaryButton  class="ms-4 text-text" :class="{ 'opacity-25': form.processing }"
+                                :disabled="form.processing"> Enviar
                             </PrimaryButton>
                         </div>
 
