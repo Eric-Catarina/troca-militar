@@ -32,22 +32,19 @@ function handleImageError() {
 
     <div class="bg-dark dark:bg-dark text-text dark:text-white/50">
 
-      <div class="min-h-screen flex flex-col items-center selection:text-white">
-            <div class="min-h-screen w-full max-w-2xl px-6 lg:max-w-7xl flex-col flex justify-between">
-                <header class="align-top grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
-                    <div class="flex lg:justify-center lg:col-start-2">
-                        <p class="font-bold text-7xl text-accent">
-                            Troca Militar
+        <div class="min-h-screen px-6 flex flex-col justify-between  selection:text-white">
+            <header class="align-top py-10 flex flex-row justify-between px-5">
+                <a class="font-bold text-8xl text-accent px-5 " href="/">
+                    Troca Militar
+                </a>
+                <nav v-if="canLogin" class="-mx-3 flex px-5">
+                    <Link v-if="$page.props.auth.user" :href="route('dashboard')"
+                        class="rounded-md text-3xl px-3 py-2 text-text ring-1 ring-transparent transition hover:text-text/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                    Dashboard
+                    </Link>
 
-                        </p>
-                    </div>
-                    <nav v-if="canLogin" class="-mx-3 flex flex-1 justify-end">
-                        <Link v-if="$page.props.auth.user" :href="route('dashboard')"
-                            class="rounded-md text-3xl px-3 py-2 text-text ring-1 ring-transparent transition hover:text-text/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                        Dashboard
-                        </Link>
-
-                        <template v-else>
+                    <template v-else class="flex flex-wrap pl-5">
+                        <div class="content-center justify-items-end">
                             <Link :href="route('login')"
                                 class="rounded-md text-3xl px-3 py-2 text-text ring-1 ring-transparent transition hover:text-text/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                             Entrar
@@ -57,34 +54,27 @@ function handleImageError() {
                                 class="rounded-md text-3xl px-3 py-2 text-text ring-1 ring-transparent transition hover:text-text/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                             Cadastrar
                             </Link>
-                        </template>
-                    </nav>
-                </header>
 
-                <main class="mt-6">
-                    <div >
-
-                        <div>
-
-                            <p class="mt-4 text-3xl text-white dark:text-white/80">
-                                Bem-vindo ao nosso site de troca de serviços militares, a plataforma ideal para
-                                militares que desejam
-                                comprar ou vender plantões e serviços na guarda. Facilite a gestão do seu tempo e
-                                encontre oportunidades
-                                para ajustar sua rotina conforme suas necessidades.
-
-                            </p>
                         </div>
+                    </template>
+                </nav>
 
+            </header>
 
+            <main class="mt-6 flex justify-center">
+                        <p class="mt-4 max-w-screen-2xl text-center text-3xl text-white dark:text-white/80">
+                            Bem-vindo ao nosso site de troca de serviços militares, a plataforma ideal para
+                            militares que desejam
+                            comprar ou vender plantões e serviços na guarda. Facilite a gestão do seu tempo e
+                            encontre oportunidades
+                            para ajustar sua rotina conforme suas necessidades.
 
-                    </div>
-                </main>
+                        </p>
+            </main>
 
-                <footer class="py-16 text-center text-sm text-text dark:text-white/70">
-                    Versão v{{ laravelVersion }} (PHP v{{ phpVersion }})
-                </footer>
-            </div>
+            <footer class="self-end place-self-end py-16 text-center text-sm text-text dark:text-white/70">
+                Versão v{{ laravelVersion }} (PHP v{{ phpVersion }})
+            </footer>
         </div>
     </div>
 </template>

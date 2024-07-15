@@ -104,7 +104,7 @@ const showingNavigationDropdown = ref(false);
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Painel do Usuário
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('services.create')" :active="route().current('services.create')">
+                        <ResponsiveNavLink class="flex flex-row" :href="route('services.create')" :active="route().current('services.create')">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
