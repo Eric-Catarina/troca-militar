@@ -85,5 +85,10 @@ return [
     */
 
     'livewire_loading_delay' => 'default',
+    // Verifique se a classe de usuário está correta
+    'auth' => [
+        'guard' => 'web', // ou outro guard que você estiver usando
+        'passwords' => 'users', // se você estiver usando o default Laravel password broker
+    ],
 
 ];
