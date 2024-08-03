@@ -16,7 +16,7 @@ export default {
                 primary:"#495E57",
                 dark:"#45474B",
                 accent:"#F4CE14",
-                text:"#F5F7F8",
+                text:"#fff",
                 'primary-inverse': 'rgb(var(--primary-inverse))',
                 'primary-hover': 'rgb(var(--primary-hover))',
                 'primary-active-color': 'rgb(var(--primary-active-color))',

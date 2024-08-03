@@ -8,6 +8,9 @@ const props = defineProps({
         type: Object,
         required: true,
     },
+    canRegister: {
+        type: Boolean,
+    },
 });
 </script>
 
@@ -24,7 +27,7 @@ const props = defineProps({
 
                 <div class="grid mt-4 grid-cols-1 md:grid-cols-2  lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
                     <div v-for="service in services.data" :key="service.id">
-                       <ServiceCard   :service="service" />
+                       <ServiceCard   :service="service" :canRegister="canRegister" />
                    </div>
 
                 </div>
