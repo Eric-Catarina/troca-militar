@@ -2,18 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class DashboardController extends Controller
 {
+    protected $serviceController;
+
+    public function __construct(ServiceController $serviceController)
+    {
+        $this->serviceController = $serviceController;
+    }
 
     public function index()
     {
-        $query = Service::query();
+        $services = $this->serviceController->getServices();
+
         return Inertia::render('Dashboard', [
-            'services' => $query->paginate(30),
+            'services' => $services,
         ]);
     }
 }

@@ -4,16 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Models\Service;
 
 class ServiceController extends Controller
 {
+
+    public function getServices()
+    {
+        return Service::inRandomOrder()->take(30)->get();
+    }
+
     public function index()
     {
         return Inertia::render('Services/Index', [
             'services' => auth()->user()->services,
-            
+
         ]);
     }
+
     public function create()
     {
         return Inertia::render('Services/Create', [

@@ -26,7 +26,7 @@ const props = defineProps({
             <div class="max-w-full mx-auto sm:px-6 lg:px-36">
 
                 <div class="grid mt-4 grid-cols-1 md:grid-cols-2  lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
-                    <div v-for="service in services.data" :key="service.id">
+                    <div v-for="service in services" :key="service.id">
                        <ServiceCard   :service="service" :canRegister="canRegister" />
                    </div>
 
