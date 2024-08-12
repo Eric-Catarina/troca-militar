@@ -6,9 +6,6 @@ const props = defineProps({
         type: Object,
         required: true,
     },
-    canRegister: {
-        type: Boolean,
-    },
 });
 
 </script>
