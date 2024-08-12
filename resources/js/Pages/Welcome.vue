@@ -36,18 +36,18 @@ function shuffleArray(array) {
 
 // Propriedade computada para embaralhar os serviços
 const shuffledServices = computed(() => {
-    if (!props.services || !props.services.data) {
-        console.error("Services data is undefined.");
+    if (!props.services || !Array.isArray(props.services.data)) {
+        console.error("Services data is undefined or not an array.");
         return [];
     }
     return shuffleArray([...props.services.data]);
 });
 
 
+
 </script>
 
 <template>
-
     <Head title="Troca Militar" />
     <div class="bg-gradient-to-br from-gray-800 bg-dark dark:bg-dark text-text dark:text-white/50">
         <div class="min-h-screen flex flex-col items-center selection:text-white">
@@ -87,8 +87,8 @@ const shuffledServices = computed(() => {
                             class="col-span-full tracking-wide font-bold subpixel-antialiased text-6xl mt-4 mb-6 lg:mt-0 md:mb-10 text-text text-center">
                             Trocar Serviços
                         </p>
-                            <div v-if="props.services && props.services.data.length" v-for="service in shuffledServices">
-                                <ServiceCard :service="service" />
+                        <div v-if="props.services && Array.isArray(props.services.data) && props.services.data.length > 0" v-for="service in shuffledServices">
+                            <ServiceCard :service="service" />
                         </div>
                         <p v-else>Loading services...</p>
                     </div>
@@ -101,3 +101,4 @@ const shuffledServices = computed(() => {
         </div>
     </div>
 </template>
+
