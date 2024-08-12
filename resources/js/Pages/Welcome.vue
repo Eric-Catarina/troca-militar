@@ -40,6 +40,8 @@ const shuffledServices = computed(() => {
         console.error("Services data is undefined or not an array.");
         return [];
     }
+    console.log(props.services.data);
+    console.log(shuffleArray([...props.services.data]));
     return shuffleArray([...props.services.data]);
 });
 

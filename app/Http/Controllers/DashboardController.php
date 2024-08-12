@@ -17,10 +17,6 @@ class DashboardController extends Controller
 
     public function index()
     {
-        $services = $this->serviceController->getServices();
-
-        return Inertia::render('Dashboard', [
-            'services' => $services,
-        ]);
+        return redirect()->action([ServiceController::class, 'index']);
     }
 }

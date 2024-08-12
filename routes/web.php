@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    $services = app(ServiceController::class)->getServices();
+    $services = app(ServiceController::class)->index();
 
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),

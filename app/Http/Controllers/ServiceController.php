@@ -16,9 +16,11 @@ class ServiceController extends Controller
 
     public function index()
     {
-        return Inertia::render('Services/Index', [
-            'services' => auth()->user()->services,
+        $services = Service::orderBy('created_at', 'desc')->get();
 
+        // Retorna a view com os serviços para o frontend
+        return Inertia::render('Services/Index', [
+            'services' => $services,
         ]);
     }
 
