@@ -36,13 +36,18 @@ function shuffleArray(array) {
 
 // Propriedade computada para embaralhar os serviços
 const shuffledServices = computed(() => {
-    console.log(props.services.data);
+    if (!props.services || !props.services.data) {
+        console.error("Services data is undefined.");
+        return [];
+    }
     return shuffleArray([...props.services.data]);
 });
+
 
 </script>
 
 <template>
+
     <Head title="Troca Militar" />
     <div class="bg-gradient-to-br from-gray-800 bg-dark dark:bg-dark text-text dark:text-white/50">
         <div class="min-h-screen flex flex-col items-center selection:text-white">
@@ -56,18 +61,18 @@ const shuffledServices = computed(() => {
                     <nav v-if="props.canLogin" class="-mx-3 flex flex-1 justify-end">
                         <Link v-if="$page.props.auth.user" :href="route('dashboard')"
                             class="rounded-md px-3 py-2 text-text ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                            Dashboard
+                        Dashboard
                         </Link>
 
                         <template v-else>
                             <Link :href="route('login')"
                                 class="rounded-md text-xl px-3 py-2 text-text ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                Entrar
+                            Entrar
                             </Link>
 
                             <Link v-if="props.canRegister" :href="route('register')"
                                 class="rounded-md text-xl px-3 py-2 text-text ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                Cadastrar
+                            Cadastrar
                             </Link>
                         </template>
                     </nav>
@@ -78,13 +83,14 @@ const shuffledServices = computed(() => {
                         <p class="col-span-full font-semibold mt-4  text-3xl text-text text-center">
                             Nunca foi tão fácil e seguro
                         </p>
-                        <p class="col-span-full tracking-wide font-bold subpixel-antialiased text-6xl mt-4 mb-6 lg:mt-0 md:mb-10 text-text text-center">
+                        <p
+                            class="col-span-full tracking-wide font-bold subpixel-antialiased text-6xl mt-4 mb-6 lg:mt-0 md:mb-10 text-text text-center">
                             Trocar Serviços
                         </p>
-
-                        <div v-for="service in shuffledServices">
-                            <ServiceCard :service="service" />
+                            <div v-if="props.services && props.services.data.length" v-for="service in shuffledServices">
+                                <ServiceCard :service="service" />
                         </div>
+                        <p v-else>Loading services...</p>
                     </div>
                 </main>
 
